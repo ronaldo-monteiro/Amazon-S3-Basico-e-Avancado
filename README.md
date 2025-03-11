@@ -25,7 +25,7 @@ provider "aws" {
   region = "us-east-1"
 }
 
-# Recurso do Bucket S3
+
 resource "aws_s3_bucket" "example" {
   bucket = "ronaldo-monteiro-bucket-lab3"
 
@@ -35,7 +35,7 @@ resource "aws_s3_bucket" "example" {
   }
 }
 
-# Recurso de Versionamento no S3
+
 resource "aws_s3_bucket_versioning" "example_versioning" {
   bucket = "ronaldo-monteiro-bucket-lab3"
   versioning_configuration {
@@ -43,7 +43,7 @@ resource "aws_s3_bucket_versioning" "example_versioning" {
   }
 }
 
-# Recurso para fazer upload de arquivo no S3
+
 resource "aws_s3_object" "example_file" {
   bucket = aws_s3_bucket.example.bucket                           
   key    = "teste.txt"                                            
@@ -62,7 +62,7 @@ resource "aws_s3_bucket_lifecycle_configuration" "example" {
 
     transition {
       days          = 30
-      storage_class = "GLACIER_IR" # Glacier Instant Retrieval
+      storage_class = "GLACIER_IR" 
     }
 
     expiration {
