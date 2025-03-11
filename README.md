@@ -20,7 +20,8 @@ Uma empresa e precisa garantir que os dados estejam armazenados de forma segura,
 
 #### 2 Segue o código via terraform:
 
-```provider "aws" {
+```hcl 
+provider "aws" {
   region = "us-east-1"
 }
 
@@ -54,7 +55,7 @@ resource "aws_s3_object" "example_file" {
 
 resource "aws_s3_bucket_lifecycle_configuration" "example" {
   bucket = aws_s3_bucket.example.bucket 
-  
+
   rule {
     id     = "MoverParaGlacierApos30Dias"
     status = "Enabled"
@@ -82,7 +83,38 @@ resource "aws_s3_bucket_lifecycle_configuration" "example" {
 
 
 
+> **Seguem os Resultados:** 
+
+**Bucket criado**
+
+<p align="center">
+  <img src="instancia.png" alt="Segundo Exemplo do código!">
+</p>
 
 
-> **Nota:** As próximas etapas abordarão como configurar o versionamento, ciclo de vida e URLs pré-assinadas para garantir segurança e eficiência no armazenamento de arquivos no Amazon S3.
+**Bloqueio de acesso publico** 
 
+<p align="center">
+  <img src="block-public-access.png" alt="Segundo Exemplo do código!">
+</p>
+
+
+**Versiomanto do arquivo** 
+
+<p align="center">
+  <img src="versionamento.png" alt="Segundo Exemplo do código!">
+</p>
+
+
+**Acesso disponível** 
+
+<p align="center">
+  <img src="acessodisponivel.png" alt="Segundo Exemplo do código!">
+</p>
+
+
+**Acesso negado após um minuto** 
+
+<p align="center">
+  <img src="acessonegado.png" alt="Segundo Exemplo do código!">
+</p>
