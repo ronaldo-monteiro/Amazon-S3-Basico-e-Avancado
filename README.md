@@ -118,3 +118,16 @@ resource "aws_s3_bucket_lifecycle_configuration" "example" {
 <p align="center">
   <img src="acessonegado.png" alt="Segundo Exemplo do código!">
 </p>
+
+
+## Concluindo o projeto
+
+
+ ### Conceitos Importantes
+
+- **Organização**: Como os buckets funcionam como contêineres para seus arquivos.
+- **Segurança**: A importância de bloquear o acesso público e como gerar URLs pré-assinadas para compartilhamento seguro.
+- **Proteção de Dados**: Como o versionamento permite recuperar versões anteriores de arquivos.
+- **Otimização de Custos**: Como as regras de ciclo de vida ajudam a mover dados para classes de armazenamento mais econômicas, como o S3 Glacier.
+
+ ## Ao final, Destruindo tudo com um simples terraform Destroy!
